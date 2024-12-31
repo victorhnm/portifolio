@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Globe, Mail, Linkedin, Search, Database, ChevronDown, ExternalLink } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Globe, Mail, Linkedin, ChevronDown, ExternalLink } from 'lucide-react';
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
