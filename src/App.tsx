@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Mail, Linkedin, ChevronDown, ExternalLink, Github } from 'lucide-react';
-import { CONFIG } from './config/portfolio';
+import { CONFIG, TOOLS } from './config/portfolio';
 
 const App = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -22,33 +22,6 @@ const App = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const skills = [
-    {
-      category: 'Visualização de Dados',
-      items: [
-        { name: 'Power BI', level: 95 },
-        { name: 'DAX', level: 90 },
-        { name: 'Data Modeling', level: 85 },
-      ]
-    },
-    {
-      category: 'Análise de Dados',
-      items: [
-        { name: 'SQL', level: 88 },
-        { name: 'Python', level: 82 },
-        { name: 'R', level: 75 },
-      ]
-    },
-    {
-      category: 'Cloud & ETL',
-      items: [
-        { name: 'Azure', level: 85 },
-        { name: 'Alteryx', level: 80 },
-        { name: 'AWS', level: 75 },
-      ]
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
@@ -105,7 +78,7 @@ const App = () => {
             </span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-12">
             <div className="space-y-6">
               <div className="p-6 bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700">
                 <h3 className="text-xl font-semibold mb-4">+2 Anos de Experiência</h3>
@@ -124,26 +97,32 @@ const App = () => {
               </div>
             </div>
 
-            <div className="space-y-8">
-              {skills.map((skillGroup, index) => (
-                <div key={index} className="space-y-4">
-                  <h3 className="text-lg font-medium text-emerald-400">{skillGroup.category}</h3>
-                  {skillGroup.items.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span>{skill.name}</span>
-                        <span>{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-emerald-500 to-green-400 transition-all duration-500"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
+            {/* Tools Section */}
+            <div className="pt-12 border-t border-gray-700">
+              <h3 className="text-2xl font-bold mb-8 text-center">
+                <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
+                  Principais Ferramentas
+                </span>
+              </h3>
+              <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-6">
+                {TOOLS.map((tool) => (
+                  <div 
+                    key={tool.name}
+                    className="flex flex-col items-center group hover:scale-110 transition-transform duration-300"
+                  >
+                    <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 relative">
+                      <img
+                        src={tool.image}
+                        alt={tool.alt}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                  ))}
-                </div>
-              ))}
+                    <span className="mt-2 text-sm text-center text-gray-300 group-hover:text-emerald-400">
+                      {tool.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
