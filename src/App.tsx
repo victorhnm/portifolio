@@ -61,13 +61,43 @@ const App = () => {
           </div>
           
           <div 
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('tools')}
             className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
           >
             <ChevronDown className="text-emerald-400 w-8 h-8" />
           </div>
         </div>
       </header>
+
+      {/* Tools Section */}
+      <section id="tools" className="py-32 relative">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-16 text-center">
+            <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
+              Principais Ferramentas
+            </span>
+          </h2>
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-6">
+            {TOOLS.map((tool) => (
+              <div 
+                key={tool.name}
+                className="flex flex-col items-center group hover:scale-110 transition-transform duration-300"
+              >
+                <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 relative">
+                  <img
+                    src={tool.image}
+                    alt={tool.alt}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="mt-2 text-sm text-center text-gray-300 group-hover:text-emerald-400">
+                  {tool.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="py-32 relative">
@@ -78,51 +108,21 @@ const App = () => {
             </span>
           </h2>
 
-          <div className="space-y-12">
-            <div className="space-y-6">
-              <div className="p-6 bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700">
-                <h3 className="text-xl font-semibold mb-4">+2 Anos de Experiência</h3>
-                <p className="text-gray-300">
-                  Atuação em projetos de Inteligência Comercial em multinacionais como Bosch e Honda, 
-                  com foco em análise de dados e desenvolvimento de soluções de Business Intelligence.
-                </p>
-              </div>
-
-              <div className="p-6 bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700">
-                <h3 className="text-xl font-semibold mb-4">Especialização Power BI</h3>
-                <p className="text-gray-300">
-                  Desde 2017 trabalhando com Power BI, desenvolvendo expertise em DAX, modelagem de dados
-                  e criação de dashboards que transformam dados complexos em visualizações intuitivas.
-                </p>
-              </div>
+          <div className="space-y-6">
+            <div className="p-6 bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700">
+              <h3 className="text-xl font-semibold mb-4">+2 Anos de Experiência</h3>
+              <p className="text-gray-300">
+                Atuação em projetos de Inteligência Comercial em multinacionais como Bosch e Honda, 
+                com foco em análise de dados e desenvolvimento de soluções de Business Intelligence.
+              </p>
             </div>
 
-            {/* Tools Section */}
-            <div className="pt-12 border-t border-gray-700">
-              <h3 className="text-2xl font-bold mb-8 text-center">
-                <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
-                  Principais Ferramentas
-                </span>
-              </h3>
-              <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-6">
-                {TOOLS.map((tool) => (
-                  <div 
-                    key={tool.name}
-                    className="flex flex-col items-center group hover:scale-110 transition-transform duration-300"
-                  >
-                    <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 relative">
-                      <img
-                        src={tool.image}
-                        alt={tool.alt}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="mt-2 text-sm text-center text-gray-300 group-hover:text-emerald-400">
-                      {tool.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <div className="p-6 bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700">
+              <h3 className="text-xl font-semibold mb-4">Especialização Power BI</h3>
+              <p className="text-gray-300">
+                Desde 2017 trabalhando com Power BI, desenvolvendo expertise em DAX, modelagem de dados
+                e criação de dashboards que transformam dados complexos em visualizações intuitivas.
+              </p>
             </div>
           </div>
         </div>
@@ -230,4 +230,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;
