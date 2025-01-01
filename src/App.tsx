@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Globe, Mail, Linkedin, ChevronDown, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, ChevronDown, ExternalLink, Github } from 'lucide-react';
+import { CONFIG } from './config/portfolio';
 
-const Portfolio = () => {
+const App = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -15,27 +16,12 @@ const Portfolio = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const dashboards = [
-    {
-      id: 1,
-      title: 'Dashboard Financeiro',
-      category: 'Finanças',
-      description: 'KPIs financeiros e análise de fluxo de caixa',
-      details: 'Análise completa de métricas financeiras, incluindo controle de despesas, receitas e indicadores de performance.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Power BI', 'DAX', 'SQL']
-    },
-    {
-      id: 2,
-      title: 'Dashboard Logística',
-      category: 'Operações',
-      description: 'Otimização de rotas e KPIs logísticos',
-      details: 'Monitoramento em tempo real de operações logísticas, incluindo roteirização e performance de entregas.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Power BI', 'Python', 'Azure']
-    },
-    // Adicione mais dashboards conforme necessário
-  ];
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const skills = [
     {
@@ -75,7 +61,7 @@ const Portfolio = () => {
       </div>
 
       {/* Hero Section */}
-      <header className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-transparent opacity-90" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -87,22 +73,31 @@ const Portfolio = () => {
             Especialista em Power BI certificado pela Microsoft, transformando dados em insights valiosos através de dashboards interativos e automatizados.
           </p>
           <div className="flex gap-4">
-            <button className="px-8 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 transition-all duration-300 font-medium">
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="px-8 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 transition-all duration-300 font-medium"
+            >
               Ver Projetos
             </button>
-            <button className="px-8 py-3 rounded-lg border border-emerald-600 hover:bg-emerald-600/10 transition-all duration-300 font-medium">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="px-8 py-3 rounded-lg border border-emerald-600 hover:bg-emerald-600/10 transition-all duration-300 font-medium"
+            >
               Contato
             </button>
           </div>
           
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div 
+            onClick={() => scrollToSection('about')}
+            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+          >
             <ChevronDown className="text-emerald-400 w-8 h-8" />
           </div>
         </div>
       </header>
 
       {/* About Section */}
-      <section className="py-32 relative">
+      <section id="about" className="py-32 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-16 text-center">
             <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
@@ -155,7 +150,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-32 relative">
+      <section id="projects" className="py-32 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-16 text-center">
             <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
@@ -164,7 +159,7 @@ const Portfolio = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {dashboards.map((project) => (
+            {CONFIG.projects.map((project) => (
               <div 
                 key={project.id}
                 className="group relative bg-gray-800/50 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-700 hover:border-emerald-500/50 transition-all duration-300"
@@ -195,9 +190,12 @@ const Portfolio = () => {
                     ))}
                   </div>
                   
-                  <button className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors group">
+                  <button 
+                    onClick={() => window.open(project.url, '_blank')}
+                    className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
+                  >
                     <span>Ver detalhes</span>
-                    <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -207,7 +205,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <footer className="py-32 relative">
+      <footer id="contact" className="py-32 relative">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8">
             <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
@@ -222,14 +220,14 @@ const Portfolio = () => {
           
           <div className="flex justify-center gap-8">
             <a 
-              href="mailto:seu@email.com"
+              href={`mailto:${CONFIG.social.email}`}
               className="flex items-center gap-2 text-gray-300 hover:text-emerald-400 transition-colors group"
             >
               <Mail className="w-5 h-5" />
               <span>Email</span>
             </a>
             <a 
-              href="https://linkedin.com/in/seu-perfil"
+              href={CONFIG.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-300 hover:text-emerald-400 transition-colors group"
@@ -238,13 +236,13 @@ const Portfolio = () => {
               <span>LinkedIn</span>
             </a>
             <a 
-              href="https://seu-site.com"
+              href={CONFIG.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-300 hover:text-emerald-400 transition-colors group"
             >
-              <Globe className="w-5 h-5" />
-              <span>Website</span>
+              <Github className="w-5 h-5" />
+              <span>GitHub</span>
             </a>
           </div>
         </div>
@@ -253,4 +251,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default App;
