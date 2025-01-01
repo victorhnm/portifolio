@@ -6,20 +6,19 @@ export const CONFIG = {
       category: 'Finanças',
       description: 'KPIs financeiros e análise de fluxo de caixa',
       details: 'Análise completa de métricas financeiras, incluindo controle de despesas, receitas e indicadores de performance.',
-      image: '/images/financeiro.png',
+      image: '/images/projects/financeiro.png',
       url: 'URL_DO_SEU_DASHBOARD',
       technologies: ['Power BI', 'DAX', 'SQL']
-    },
-    // Você pode adicionar mais projetos aqui facilmente
+    }
   ],
   social: {
     linkedin: 'https://www.linkedin.com/in/victor-melo-analista',
     github: 'https://github.com/victorhnm',
     email: 'victor.hilton.18@gmail.com'
   }
-}
-
-export const TOOLS = [
+ };
+ 
+ export const TOOLS = [
   {
     name: 'Alteryx',
     image: '/images/tools/alteryx.png',
@@ -70,4 +69,4 @@ export const TOOLS = [
     image: '/images/tools/tabulareditor.png',
     alt: 'Tabular Editor'
   }
-]
+ ];
