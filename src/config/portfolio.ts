@@ -1,143 +1,159 @@
-export const CONFIG = {
-  projects: [
-    {
-      id: 1,
-      title: 'Dashboard Financeiro',
-      category: 'Finanças',
-      description: 'KPIs financeiros e análise de fluxo de caixa',
-      details: 'Análise completa de métricas financeiras, incluindo controle de despesas, receitas e indicadores de performance.',
-      image: '/images/projects/financeiro.png',
-      url: 'URL_DO_SEU_DASHBOARD',
-      technologies: ['Power BI', 'DAX', 'SQL']
-    },
-    {
-      id: 2,
-      title: 'Dashboard Comercial',
-      category: 'Vendas',
-      description: 'Análise de performance de vendas e KPIs comerciais',
-      details: 'Monitoramento em tempo real de vendas, metas, comissões e performance da equipe comercial.',
-      image: '/images/projects/comercial.png',
-      url: 'URL_DO_SEU_DASHBOARD',
-      technologies: ['Power BI', 'DAX', 'Python']
-    },
-    {
-      id: 3,
-      title: 'Dashboard Marketing',
-      category: 'Marketing',
-      description: 'Análise de campanhas e ROI',
-      details: 'Análise detalhada de campanhas de marketing, retorno sobre investimento e métricas de performance.',
-      image: '/images/projects/marketing.png',
-      url: 'URL_DO_SEU_DASHBOARD',
-      technologies: ['Power BI', 'Google Analytics', 'Python']
-    }
-  ],
-  social: {
-    linkedin: 'https://www.linkedin.com/in/victor-melo-analista',
-    github: 'https://github.com/victorhnm',
-    email: 'victor.hilton.18@gmail.com'
-  }
-};
+export const PROFILE = {
+  name: "Victor Melo",
+  title: "Analista de Dados & Especialista em Business Intelligence",
+  headline: "Convertendo complexidade em clareza através dos dados",
+  focus: "Criação de soluções de BI que transformam métricas em oportunidades de crescimento"
+}
+
+export const HERO = {
+  greeting: "Construindo o futuro com",
+  highlight: "INTELIGÊNCIA DE DADOS!",
+  description: "Desenvolvo soluções personalizadas de Business Intelligence que permitem sua empresa visualizar oportunidades, otimizar processos e acelerar o crescimento baseado em dados."
+}
 
 export const TOOLS = [
   {
     name: 'Alteryx',
-    image: '/images/tools/alteryx.png',
-    alt: 'Alteryx Data Analytics'
-  },
-  {
-    name: 'AWS',
-    image: '/images/tools/aws.png',
-    alt: 'Amazon Web Services'
-  },
-  {
-    name: 'DAX Studio',
-    image: '/images/tools/daxstudio.png',
-    alt: 'DAX Studio'
-  },
-  {
-    name: 'Excel',
-    image: '/images/tools/excel.png',
-    alt: 'Microsoft Excel'
-  },
-  {
-    name: 'Figma',
-    image: '/images/tools/figma.png',
-    alt: 'Figma'
-  },
-  {
-    name: 'PostgreSQL',
-    image: '/images/tools/postgresql.png',
-    alt: 'PostgreSQL'
+    image: '/images/tools/alteryx.svg',
+    alt: 'Alteryx Analytics Tool'
   },
   {
     name: 'Power BI',
-    image: '/images/tools/powerbi.png',
-    alt: 'Microsoft Power BI'
-  },
-  {
-    name: 'Python',
-    image: '/images/tools/python.png',
-    alt: 'Python'
+    image: '/images/tools/powerbi.svg',
+    alt: 'Microsoft Power BI Visualization'
   },
   {
     name: 'SQL',
-    image: '/images/tools/sql.png',
-    alt: 'SQL'
+    image: '/images/tools/sql.svg',
+    alt: 'SQL Database'
+  },
+  {
+    name: 'Python',
+    image: '/images/tools/python.svg',
+    alt: 'Python Programming'
+  },
+  {
+    name: 'Excel',
+    image: '/images/tools/excel.svg',
+    alt: 'Microsoft Excel Advanced Analytics'
+  },
+  {
+    name: 'DAX Studio',
+    image: '/images/tools/daxstudio.svg',
+    alt: 'DAX Studio'
+  },
+  {
+    name: 'PostgreSQL',
+    image: '/images/tools/postgresql.svg',
+    alt: 'PostgreSQL Database'
+  },
+  {
+    name: 'Figma',
+    image: '/images/tools/figma.svg',
+    alt: 'Figma Design Tool'
   },
   {
     name: 'Tabular Editor',
-    image: '/images/tools/tabulareditor.png',
+    image: '/images/tools/tabulareditor.svg',
     alt: 'Tabular Editor'
   }
-];
+]
 
-export const SERVICES = [
+export const PROJECTS = [
   {
-    title: 'Criação de Dashboards',
-    description: 'Desenvolvimento de dashboards interativos e intuitivos, alinhados com as necessidades específicas do seu negócio. Transformo dados complexos em insights acionáveis e visualizações impactantes.',
-    icon: 'BarChart'
+    title: "Análise Financeira Integrada",
+    description: "Sistema unificado de métricas financeiras",
+    results: [
+      "Unificação de 5 fontes de dados distintas",
+      "Automatização de relatórios mensais",
+      "Visibilidade em tempo real de indicadores"
+    ],
+    technologies: ["Power BI", "SQL", "Alteryx"]
   },
   {
-    title: 'Consultoria em Design',
-    description: 'Otimização e redesign de relatórios existentes, implementando as melhores práticas de visualização de dados e UX/UI para garantir máxima eficiência e usabilidade.',
-    icon: 'Layout'
+    title: "Monitor de Performance Comercial",
+    description: "Painel centralizado de indicadores de vendas",
+    results: [
+      "Monitoramento de KPIs em tempo real",
+      "Análise preditiva de tendências",
+      "Insights automáticos de oportunidades"
+    ],
+    technologies: ["Power BI", "DAX", "SQL"]
   },
   {
-    title: 'Treinamento Personalizado',
-    description: 'Capacitação sob medida em Power BI, desde fundamentos até técnicas avançadas de DAX e modelagem de dados. Compartilho conhecimento prático baseado em experiência real.',
-    icon: 'GraduationCap'
+    title: "Otimização de Cadeia de Suprimentos",
+    description: "Dashboard inteligente de gestão de estoque",
+    results: [
+      "Otimização de níveis de estoque",
+      "Análise preditiva de demanda",
+      "Alertas inteligentes de reposição"
+    ],
+    technologies: ["Power BI", "Python", "SQL"]
   }
-];
+]
 
 export const SOLUTIONS = [
   {
-    title: 'Dashboards Interativos',
-    description: 'Transforme seus dados em histórias visuais poderosas. Crio relatórios interativos que permitem análises profundas e tomadas de decisão ágeis.',
+    title: 'Visualização Inteligente de Dados',
+    description: 'Criação de painéis interativos que revelam insights ocultos em seus dados.',
     features: [
-      'Visualizações customizadas',
-      'Interatividade avançada',
-      'Design responsivo',
-      'Performance otimizada'
+      'Indicadores personalizados',
+      'Dashboards responsivos',
+      'Interface intuitiva',
+      'Alta performance'
     ]
   },
   {
-    title: 'Integração de Dados',
-    description: 'Unifique seus dados de diferentes fontes em um único local. Desenvolvo soluções que conectam e transformam seus dados de forma eficiente.',
+    title: 'Assessoria em Business Intelligence',
+    description: 'Maximize o potencial dos seus dados com análises estratégicas e orientação especializada.',
     features: [
-      'Conexão com múltiplas fontes',
-      'ETL automatizado',
-      'Modelagem dimensional',
-      'Governança de dados'
+      'Diagnóstico de necessidades',
+      'Implementação de soluções',
+      'Melhoria de processos',
+      'Acompanhamento contínuo'
     ]
   },
   {
-    title: 'Automação de Processos',
-    description: 'Automatize tarefas repetitivas e ganhe tempo. Implemento soluções que aumentam a produtividade e reduzem erros manuais.',
+    title: 'Capacitação em Análise de Dados',
+    description: 'Desenvolva as habilidades da sua equipe em análise e visualização de dados.',
     features: [
-      'Atualização automática',
-      'Alertas inteligentes',
-      'Distribuição automatizada',
-      'Monitoramento em tempo real'
+      'Fundamentos de BI',
+      'Análises avançadas',
+      'Projetos práticos',
+      'Suporte dedicado'
     ]
   }
-];
+]
+
+export const SERVICES = [
+  {
+    title: 'Construção de Painéis Analíticos',
+    description: 'Transformação de dados brutos em visualizações claras e acionáveis que impulsionam decisões fundamentadas.',
+    icon: 'BarChart'
+  },
+  {
+    title: 'Aperfeiçoamento de Relatórios',
+    description: 'Modernização e otimização de relatórios existentes para maior eficiência e clareza na apresentação de dados.',
+    icon: 'Layout'
+  },
+  {
+    title: 'Formação em Análise de Dados',
+    description: 'Programas personalizados de desenvolvimento em análise de dados, desde conceitos fundamentais até técnicas avançadas.',
+    icon: 'GraduationCap'
+  }
+]
+
+export const CTA = {
+  main: "Pronto para impulsionar seu negócio com análise de dados?",
+  button: "Agende uma Análise Gratuita",
+  contact: {
+    title: "Vamos Conversar",
+    description: "Descubra como a análise de dados pode revolucionar a tomada de decisão no seu negócio."
+  }
+}
+
+export const CONTACT = {
+  email: "victor.hilton.18@gmail.com",
+  linkedin: "https://www.linkedin.com/in/victor-melo-analista/",
+  github: "https://github.com/victorhnm"
+}
